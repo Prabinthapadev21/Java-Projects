@@ -117,3 +117,24 @@ public class NoteManagerWithGUI extends JFrame{
         }
         isDarkMode = !isDarkMode;
     }
+    // Apply Dark Mode
+    private void applyDarkMode() {
+        getContentPane().setBackground(Color.DARK_GRAY);
+        textArea.setBackground(Color.BLACK);
+        textArea.setForeground(Color.WHITE);
+        textArea.setCaretColor(Color.WHITE);
+
+        saveButton.setBackground(Color.GRAY);
+        readButton.setBackground(Color.GRAY);
+        appendButton.setBackground(Color.GRAY);
+        deleteButton.setBackground(Color.GRAY);
+        chooseFileButton.setBackground(Color.GRAY);
+        darkModeButton.setBackground(Color.GRAY);
+
+        saveButton.setForeground(Color.WHITE);
+        readButton.setForeground(Color.WHITE);
+        appendButton.setForeground(Color.WHITE);
+        deleteButton.setForeground(Color.WHITE);
+        chooseFileButton.setForeground(Color.WHITE);
+        darkModeButton.setForeground(Color.WHITE);
+    }
