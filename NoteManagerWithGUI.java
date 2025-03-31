@@ -64,3 +64,16 @@ public class NoteManagerWithGUI extends JFrame{
         }
     }
 
+    // Read the note
+    private void readNote() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
+            textArea.setText("");
+            String line;
+            while ((line = reader.readLine()) != null) {
+                textArea.append(line + "\n");
+            }
+            JOptionPane.showMessageDialog(this, "📖 Note loaded successfully!");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "❌ No note found! Create a note first.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
