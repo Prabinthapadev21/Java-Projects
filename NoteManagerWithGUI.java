@@ -86,3 +86,16 @@ public class NoteManagerWithGUI extends JFrame{
             JOptionPane.showMessageDialog(this, "❌ Error appending to note.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    // Delete the note file
+    private void deleteNote() {
+        if (selectedFile.exists()) {
+            if (selectedFile.delete()) {
+                textArea.setText("");
+                JOptionPane.showMessageDialog(this, "✅ Note deleted successfully!");
+            } else {
+                JOptionPane.showMessageDialog(this, "❌ Unable to delete note.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "❌ No note found to delete!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
