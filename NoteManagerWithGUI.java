@@ -54,3 +54,13 @@ public class NoteManagerWithGUI extends JFrame{
 
         setVisible(true);
     }
+    // Create a new note
+    private void createNote() {
+        try (FileWriter writer = new FileWriter(selectedFile)) {
+            writer.write(textArea.getText());
+            JOptionPane.showMessageDialog(this, "✅ Note saved successfully!");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "❌ Error saving note.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
