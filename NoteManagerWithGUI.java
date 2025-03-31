@@ -159,3 +159,7 @@ public class NoteManagerWithGUI extends JFrame{
         chooseFileButton.setForeground(Color.BLACK);
         darkModeButton.setForeground(Color.BLACK);
     }
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(NoteManagerWithGUI::new);
+    }
+}
