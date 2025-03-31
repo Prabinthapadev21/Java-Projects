@@ -52,4 +52,16 @@ public class NoteManager {
             e.printStackTrace();
         }
     }
+    // Read the note
+    public static void readNote() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
+            System.out.println("\n📄 Your Note Content:");
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("❌ No note found! Create a note first.");
+        }
+    }
 }
