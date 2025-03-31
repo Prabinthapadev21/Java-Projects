@@ -99,3 +99,12 @@ public class NoteManagerWithGUI extends JFrame{
             JOptionPane.showMessageDialog(this, "❌ No note found to delete!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    // File Chooser - Select a Note File
+    private void chooseFile() {
+        JFileChooser fileChooser = new JFileChooser(System.getProperty("user.home") + "/Desktop");
+        int option = fileChooser.showOpenDialog(this);
+        if (option == JFileChooser.APPROVE_OPTION) {
+            selectedFile = fileChooser.getSelectedFile();
+            JOptionPane.showMessageDialog(this, "✅ Selected file: " + selectedFile.getName());
+        }
+    }
