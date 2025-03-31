@@ -40,3 +40,17 @@ public class NoteManagerWithGUI extends JFrame{
         buttonPanel.add(chooseFileButton);
         buttonPanel.add(darkModeButton);
         add(buttonPanel, BorderLayout.SOUTH);
+
+        // Button Actions
+        saveButton.addActionListener(e -> createNote());
+        readButton.addActionListener(e -> readNote());
+        appendButton.addActionListener(e -> appendNote());
+        deleteButton.addActionListener(e -> deleteNote());
+        chooseFileButton.addActionListener(e -> chooseFile());
+        darkModeButton.addActionListener(e -> toggleDarkMode());
+
+        // Apply Default Theme
+        applyLightMode();
+
+        setVisible(true);
+    }
