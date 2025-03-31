@@ -64,4 +64,16 @@ public class NoteManager {
             System.out.println("❌ No note found! Create a note first.");
         }
     }
+    // Append to an existing note
+    public static void appendNote(Scanner scanner) {
+        try (FileWriter writer = new FileWriter(FILE_PATH, true)) {
+            System.out.println("Enter text to append:");
+            String note = scanner.nextLine();
+            writer.write("\n" + note); // ✅ Fixed 'Writer' error
+            System.out.println("✅ Text appended successfully!");
+        } catch (IOException e) {
+            System.out.println("❌ Error appending to note.");
+            e.printStackTrace();
+        }
+    }
 }
