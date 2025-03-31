@@ -76,4 +76,17 @@ public class NoteManager {
             e.printStackTrace();
         }
     }
+    // Delete the note file
+    public static void deleteNote() {
+        File file = new File(FILE_PATH);
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("✅ Note deleted successfully!");
+            } else {
+                System.out.println("❌ Unable to delete note.");
+            }
+        } else {
+            System.out.println("❌ No note found to delete!");
+        }
+    }
 }
