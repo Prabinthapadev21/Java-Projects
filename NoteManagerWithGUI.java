@@ -77,3 +77,12 @@ public class NoteManagerWithGUI extends JFrame{
             JOptionPane.showMessageDialog(this, "❌ No note found! Create a note first.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    // Append to an existing note
+    private void appendNote() {
+        try (FileWriter writer = new FileWriter(selectedFile, true)) {
+            writer.write("\n" + textArea.getText());
+            JOptionPane.showMessageDialog(this, "✅ Text appended successfully!");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "❌ Error appending to note.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
