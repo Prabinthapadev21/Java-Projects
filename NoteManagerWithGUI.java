@@ -21,3 +21,22 @@ public class NoteManagerWithGUI extends JFrame{
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
         add(new JScrollPane(textArea), BorderLayout.CENTER);
+
+        // Panel for Buttons
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new GridLayout(2, 3, 10, 10));
+
+        saveButton = new JButton("Save Note");
+        readButton = new JButton("Read Note");
+        appendButton = new JButton("Append Note");
+        deleteButton = new JButton("Delete Note");
+        chooseFileButton = new JButton("Choose File");
+        darkModeButton = new JButton("Dark Mode 🌙");
+
+        buttonPanel.add(saveButton);
+        buttonPanel.add(readButton);
+        buttonPanel.add(appendButton);
+        buttonPanel.add(deleteButton);
+        buttonPanel.add(chooseFileButton);
+        buttonPanel.add(darkModeButton);
+        add(buttonPanel, BorderLayout.SOUTH);
