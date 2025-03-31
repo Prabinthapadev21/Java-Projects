@@ -40,5 +40,16 @@ public class NoteManager {
             }
         }
     }
-    
+    // Create a new note
+    public static void createNote(Scanner scanner) {
+        try (FileWriter writer = new FileWriter(FILE_PATH)) {
+            System.out.println("Enter your note:");
+            String note = scanner.nextLine();
+            writer.write(note);
+            System.out.println("✅ Note saved successfully!");
+        } catch (IOException e) {
+            System.out.println("❌ Error creating note.");
+            e.printStackTrace();
+        }
+    }
 }
