@@ -138,3 +138,24 @@ public class NoteManagerWithGUI extends JFrame{
         chooseFileButton.setForeground(Color.WHITE);
         darkModeButton.setForeground(Color.WHITE);
     }
+    // Apply Light Mode
+    private void applyLightMode() {
+        getContentPane().setBackground(Color.WHITE);
+        textArea.setBackground(Color.WHITE);
+        textArea.setForeground(Color.BLACK);
+        textArea.setCaretColor(Color.BLACK);
+
+        saveButton.setBackground(Color.LIGHT_GRAY);
+        readButton.setBackground(Color.LIGHT_GRAY);
+        appendButton.setBackground(Color.LIGHT_GRAY);
+        deleteButton.setBackground(Color.LIGHT_GRAY);
+        chooseFileButton.setBackground(Color.LIGHT_GRAY);
+        darkModeButton.setBackground(Color.LIGHT_GRAY);
+
+        saveButton.setForeground(Color.BLACK);
+        readButton.setForeground(Color.BLACK);
+        appendButton.setForeground(Color.BLACK);
+        deleteButton.setForeground(Color.BLACK);
+        chooseFileButton.setForeground(Color.BLACK);
+        darkModeButton.setForeground(Color.BLACK);
+    }
