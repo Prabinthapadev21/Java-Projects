@@ -108,3 +108,12 @@ public class NoteManagerWithGUI extends JFrame{
             JOptionPane.showMessageDialog(this, "✅ Selected file: " + selectedFile.getName());
         }
     }
+    // Toggle Dark Mode
+    private void toggleDarkMode() {
+        if (isDarkMode) {
+            applyLightMode();
+        } else {
+            applyDarkMode();
+        }
+        isDarkMode = !isDarkMode;
+    }
